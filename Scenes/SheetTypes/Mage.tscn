@@ -1,0 +1,347 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf7pq2i5ulacd"]
+
+[ext_resource type="PackedScene" uid="uid://bcempof886bwg" path="res://Scenes/SheetTypes/CharacterSheet.tscn" id="1_mxvxm"]
+[ext_resource type="PackedScene" uid="uid://bkm6jvwyuc1xm" path="res://Scenes/Tools/h_box_level_container.tscn" id="2_wh0yp"]
+[ext_resource type="PackedScene" uid="uid://cd2gofdj1dcu3" path="res://Scenes/Tools/custom_level_container.tscn" id="3_mebry"]
+[ext_resource type="PackedScene" uid="uid://d4fwbo6ottgjn" path="res://Scenes/Tools/TenBar.tscn" id="4_eb2p5"]
+[ext_resource type="PackedScene" uid="uid://cxekntfo7n6mi" path="res://Scenes/Tools/health_box.tscn" id="5_0rpqk"]
+[ext_resource type="PackedScene" uid="uid://uu3btg1bodg3" path="res://Scenes/Tools/check_box.tscn" id="5_fxoh6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4ea2"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbgg0"]
+font_size = 20
+
+[node name="Control" instance=ExtResource("1_mxvxm")]
+
+[node name="CharacterSheet" parent="." index="0"]
+offset_bottom = 1533.0
+
+[node name="Spheres" type="Label" parent="CharacterSheet" index="5"]
+layout_mode = 2
+text = "Spheres"
+label_settings = SubResource("LabelSettings_o4ea2")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SpheresContainer" type="HBoxContainer" parent="CharacterSheet" index="6"]
+layout_mode = 2
+alignment = 1
+
+[node name="Col1" type="VBoxContainer" parent="CharacterSheet/SpheresContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EarthContainer" parent="CharacterSheet/SpheresContainer/Col1" index="0" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Earth"
+
+[node name="AirContainer" parent="CharacterSheet/SpheresContainer/Col1" index="1" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Air"
+
+[node name="LightContainer" parent="CharacterSheet/SpheresContainer/Col1" index="2" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Light"
+
+[node name="Col2" type="VBoxContainer" parent="CharacterSheet/SpheresContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FireContainer" parent="CharacterSheet/SpheresContainer/Col2" index="0" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Fire"
+
+[node name="WaterContainer" parent="CharacterSheet/SpheresContainer/Col2" index="1" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Water"
+
+[node name="DarkContainer" parent="CharacterSheet/SpheresContainer/Col2" index="2" instance=ExtResource("2_wh0yp")]
+layout_mode = 2
+labelText = "Dark"
+
+[node name="Col3" type="VBoxContainer" parent="CharacterSheet/SpheresContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CustomLevelContainer" parent="CharacterSheet/SpheresContainer/Col3" index="0" instance=ExtResource("3_mebry")]
+layout_mode = 2
+
+[node name="CustomLevelContainer2" parent="CharacterSheet/SpheresContainer/Col3" index="1" instance=ExtResource("3_mebry")]
+layout_mode = 2
+
+[node name="CustomLevelContainer3" parent="CharacterSheet/SpheresContainer/Col3" index="2" instance=ExtResource("3_mebry")]
+layout_mode = 2
+
+[node name="Advantages" type="Label" parent="CharacterSheet" index="7"]
+layout_mode = 2
+text = "Advantages"
+label_settings = SubResource("LabelSettings_o4ea2")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterSheet" index="8"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="UniqueNotesContainer" type="VBoxContainer" parent="CharacterSheet/HBoxContainer" index="0"]
+layout_mode = 2
+alignment = 1
+
+[node name="SpellsAbilities" type="Label" parent="CharacterSheet/HBoxContainer/UniqueNotesContainer" index="0"]
+layout_mode = 2
+text = "Spells/Unique Abilities"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="CharacterSheet/HBoxContainer/UniqueNotesContainer" index="1"]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+
+[node name="GnosisWillpowerParadox" type="VBoxContainer" parent="CharacterSheet/HBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Gnosis" type="Label" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="0"]
+layout_mode = 2
+text = "Gnosis"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="GnosisLevels" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="1" instance=ExtResource("4_eb2p5")]
+layout_mode = 2
+
+[node name="Willpower" type="Label" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="2"]
+layout_mode = 2
+text = "Willpower"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="PermanentWillpower" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="3" instance=ExtResource("4_eb2p5")]
+layout_mode = 2
+
+[node name="TempWillpower" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="4"]
+layout_mode = 2
+
+[node name="CheckBox" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="0" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="1" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="2" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="3" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="4" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="5" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="6" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="7" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="8" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/TempWillpower" index="9" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="Paradox" type="Label" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="5"]
+layout_mode = 2
+text = "Paradox"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="CurrentParadox1" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="6"]
+layout_mode = 2
+
+[node name="CheckBox" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="0" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="1" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="2" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="3" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="4" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="5" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="6" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="7" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="8" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox1" index="9" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CurrentParadox2" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox" index="7"]
+layout_mode = 2
+
+[node name="CheckBox" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="0" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="1" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="2" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="3" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="4" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="5" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="6" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="7" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="8" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="CharacterSheet/HBoxContainer/GnosisWillpowerParadox/CurrentParadox2" index="9" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="HealthAnimaExp" type="VBoxContainer" parent="CharacterSheet/HBoxContainer" index="2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Health" type="Label" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="0"]
+layout_mode = 2
+text = "Health
+"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="MaxHP" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="1" instance=ExtResource("4_eb2p5")]
+layout_mode = 2
+
+[node name="CurrentHP" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="2"]
+layout_mode = 2
+
+[node name="HealthBox" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="0" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox2" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="1" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox3" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="2" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox4" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="3" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox5" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="4" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox6" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="5" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox7" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="6" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox8" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="7" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox9" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="8" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="HealthBox10" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentHP" index="9" instance=ExtResource("5_0rpqk")]
+layout_mode = 2
+
+[node name="Anima" type="Label" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="3"]
+layout_mode = 2
+text = "Anima"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="CurrentAnima1" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="4"]
+layout_mode = 2
+
+[node name="CheckBox" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="0" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="1" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="2" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="3" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="4" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="5" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="6" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="7" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="8" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima1" index="9" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CurrentAnima2" type="HBoxContainer" parent="CharacterSheet/HBoxContainer/HealthAnimaExp" index="5"]
+layout_mode = 2
+
+[node name="CheckBox" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="0" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="1" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="2" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="3" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="4" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="5" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="6" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="7" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="8" instance=ExtResource("5_fxoh6")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="CharacterSheet/HBoxContainer/HealthAnimaExp/CurrentAnima2" index="9" instance=ExtResource("5_fxoh6")]
+layout_mode = 2

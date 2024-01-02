@@ -1,0 +1,487 @@
+[gd_scene load_steps=5 format=3 uid="uid://disldu4eonx67"]
+
+[ext_resource type="PackedScene" uid="uid://bkm6jvwyuc1xm" path="res://Scenes/Tools/h_box_level_container.tscn" id="1_ocgsk"]
+[ext_resource type="Texture2D" uid="uid://7ljdd4tf8i6v" path="res://Textures/OnCheck.png" id="2_l0dmx"]
+[ext_resource type="PackedScene" uid="uid://cd2gofdj1dcu3" path="res://Scenes/Tools/custom_level_container.tscn" id="3_2246p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbgg0"]
+font_size = 20
+
+[node name="CharacterSheet" type="VBoxContainer"]
+offset_right = 1155.0
+offset_bottom = 801.0
+alignment = 1
+
+[node name="CharacterInfo" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacing" type="Label" parent="CharacterInfo"]
+custom_minimum_size = Vector2(59.385, 0)
+layout_mode = 2
+
+[node name="NamePlayerEssence" type="VBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameContainer" type="HBoxContainer" parent="CharacterInfo/NamePlayerEssence"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CharacterInfo/NamePlayerEssence/NameContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/NamePlayerEssence/NameContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="PlayerContainer" type="HBoxContainer" parent="CharacterInfo/NamePlayerEssence"]
+layout_mode = 2
+
+[node name="Player" type="Label" parent="CharacterInfo/NamePlayerEssence/PlayerContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Player"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/NamePlayerEssence/PlayerContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="EssenceContainer" type="HBoxContainer" parent="CharacterInfo/NamePlayerEssence"]
+layout_mode = 2
+
+[node name="Essence" type="Label" parent="CharacterInfo/NamePlayerEssence/EssenceContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Essence"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/NamePlayerEssence/EssenceContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="VirtueViceConcept" type="VBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VirtueContainer" type="HBoxContainer" parent="CharacterInfo/VirtueViceConcept"]
+layout_mode = 2
+
+[node name="Virtue" type="Label" parent="CharacterInfo/VirtueViceConcept/VirtueContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Virtue"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/VirtueViceConcept/VirtueContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ViceContainer" type="HBoxContainer" parent="CharacterInfo/VirtueViceConcept"]
+layout_mode = 2
+
+[node name="Vice" type="Label" parent="CharacterInfo/VirtueViceConcept/ViceContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Vice"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/VirtueViceConcept/ViceContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="EssenceContainer" type="HBoxContainer" parent="CharacterInfo/VirtueViceConcept"]
+layout_mode = 2
+
+[node name="Essence" type="Label" parent="CharacterInfo/VirtueViceConcept/EssenceContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Essence"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/VirtueViceConcept/EssenceContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="AgeNatureDemeaner" type="VBoxContainer" parent="CharacterInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AgeContainer" type="HBoxContainer" parent="CharacterInfo/AgeNatureDemeaner"]
+layout_mode = 2
+
+[node name="Age" type="Label" parent="CharacterInfo/AgeNatureDemeaner/AgeContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Age"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/AgeNatureDemeaner/AgeContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="NatureContainer" type="HBoxContainer" parent="CharacterInfo/AgeNatureDemeaner"]
+layout_mode = 2
+
+[node name="Nature" type="Label" parent="CharacterInfo/AgeNatureDemeaner/NatureContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Nature"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/AgeNatureDemeaner/NatureContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="DemeanerContainer" type="HBoxContainer" parent="CharacterInfo/AgeNatureDemeaner"]
+layout_mode = 2
+
+[node name="Demeaner" type="Label" parent="CharacterInfo/AgeNatureDemeaner/DemeanerContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Demeaner"
+
+[node name="LineEdit" type="LineEdit" parent="CharacterInfo/AgeNatureDemeaner/DemeanerContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="AttributesLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Attributes
+"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="AttributesContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="PhysicalAttributes" type="VBoxContainer" parent="AttributesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Physical" type="Label" parent="AttributesContainer/PhysicalAttributes"]
+layout_mode = 2
+text = "Physical"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="StrengthContainer" parent="AttributesContainer/PhysicalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Strength"
+toolTipText = "This is a test
+Still testing!"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/PhysicalAttributes/StrengthContainer" index="0"]
+tooltip_text = "This is a test
+Still testing!"
+text = "Strength"
+
+[node name="Button1" parent="AttributesContainer/PhysicalAttributes/StrengthContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="DexterityContainer" parent="AttributesContainer/PhysicalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Dexterity"
+toolTipText = "This is also a test"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/PhysicalAttributes/DexterityContainer" index="0"]
+tooltip_text = "This is also a test"
+text = "Dexterity"
+
+[node name="Button1" parent="AttributesContainer/PhysicalAttributes/DexterityContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="StaminaContainer" parent="AttributesContainer/PhysicalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Stamina"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/PhysicalAttributes/StaminaContainer" index="0"]
+text = "Stamina"
+
+[node name="Button1" parent="AttributesContainer/PhysicalAttributes/StaminaContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="SocialAttributes" type="VBoxContainer" parent="AttributesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Social" type="Label" parent="AttributesContainer/SocialAttributes"]
+layout_mode = 2
+text = "Social
+"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="CharismaContainer" parent="AttributesContainer/SocialAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Charisma"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/SocialAttributes/CharismaContainer" index="0"]
+text = "Charisma"
+
+[node name="Button1" parent="AttributesContainer/SocialAttributes/CharismaContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="ManipulationContainer" parent="AttributesContainer/SocialAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Manipulation"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/SocialAttributes/ManipulationContainer" index="0"]
+text = "Manipulation"
+
+[node name="Button1" parent="AttributesContainer/SocialAttributes/ManipulationContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="AppearanceContainer" parent="AttributesContainer/SocialAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Appearance"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/SocialAttributes/AppearanceContainer" index="0"]
+text = "Appearance"
+
+[node name="Button1" parent="AttributesContainer/SocialAttributes/AppearanceContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="MentalAttributes" type="VBoxContainer" parent="AttributesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Mental" type="Label" parent="AttributesContainer/MentalAttributes"]
+layout_mode = 2
+text = "Mental
+"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="PerceptionContainer" parent="AttributesContainer/MentalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Perception"
+startingLevel = 1
+
+[node name="Default" parent="AttributesContainer/MentalAttributes/PerceptionContainer" index="0"]
+text = "Perception"
+
+[node name="Button1" parent="AttributesContainer/MentalAttributes/PerceptionContainer" index="1"]
+toggle_mode = true
+icon = ExtResource("2_l0dmx")
+
+[node name="IntelligenceContainer" parent="AttributesContainer/MentalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Intelligence"
+startingLevel = 1
+
+[node name="WitsContainer" parent="AttributesContainer/MentalAttributes" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Wits"
+startingLevel = 1
+
+[node name="Abilities" type="Label" parent="."]
+layout_mode = 2
+text = "Abilities"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SkillsContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="TalentsAbilities" type="VBoxContainer" parent="SkillsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Talents" type="Label" parent="SkillsContainer/TalentsAbilities"]
+layout_mode = 2
+text = "Talents"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="AlertnessContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Alertness"
+
+[node name="AthleticsContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Athletics"
+
+[node name="AwarenessContainer2" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Awareness"
+
+[node name="BrawlContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Brawl"
+
+[node name="DodgeContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Dodge"
+
+[node name="ExpressionContainer2" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Expression"
+
+[node name="InsightContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Insight"
+
+[node name="LeadershipContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Leadership"
+
+[node name="SubterfugeContainer2" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Subterfuge"
+
+[node name="CustomLevelContainer" parent="SkillsContainer/TalentsAbilities" instance=ExtResource("3_2246p")]
+layout_mode = 2
+
+[node name="SkillAbilities" type="VBoxContainer" parent="SkillsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Skills" type="Label" parent="SkillsContainer/SkillAbilities"]
+layout_mode = 2
+text = "Skills"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="AccuracyContainer" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Accuracy"
+
+[node name="AnimalKenContainer2" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Animal Ken"
+
+[node name="ConcentrationContainer3" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Concentration"
+
+[node name="CraftsContainer5" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Crafts"
+
+[node name="EttiquetteContainer6" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Ettiquette"
+
+[node name="MeleeContainer7" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Melee"
+
+[node name="StealthContainer8" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Stealth"
+
+[node name="SurvivalContainer9" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Survival"
+
+[node name="TechnologyContainer4" parent="SkillsContainer/SkillAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Technology"
+
+[node name="CustomLevelContainer" parent="SkillsContainer/SkillAbilities" instance=ExtResource("3_2246p")]
+layout_mode = 2
+
+[node name="KnowledgeAbilities" type="VBoxContainer" parent="SkillsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Knowledges" type="Label" parent="SkillsContainer/KnowledgeAbilities"]
+layout_mode = 2
+text = "Knowledges
+"
+label_settings = SubResource("LabelSettings_gbgg0")
+horizontal_alignment = 1
+
+[node name="HBoxLevelContainer" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Animism"
+
+[node name="HBoxLevelContainer2" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Culture"
+
+[node name="HBoxLevelContainer3" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Enigmas"
+
+[node name="HBoxLevelContainer10" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Engineering"
+
+[node name="HBoxLevelContainer4" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Ethics"
+
+[node name="HBoxLevelContainer5" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Investigation"
+
+[node name="HBoxLevelContainer6" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Lore"
+
+[node name="HBoxLevelContainer7" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Medicine"
+
+[node name="HBoxLevelContainer8" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("1_ocgsk")]
+layout_mode = 2
+labelText = "Science"
+
+[node name="CustomLevelContainer" parent="SkillsContainer/KnowledgeAbilities" instance=ExtResource("3_2246p")]
+layout_mode = 2
+
+[editable path="AttributesContainer/PhysicalAttributes/StrengthContainer"]
+[editable path="AttributesContainer/PhysicalAttributes/DexterityContainer"]
+[editable path="AttributesContainer/PhysicalAttributes/StaminaContainer"]
+[editable path="AttributesContainer/SocialAttributes/CharismaContainer"]
+[editable path="AttributesContainer/SocialAttributes/ManipulationContainer"]
+[editable path="AttributesContainer/SocialAttributes/AppearanceContainer"]
+[editable path="AttributesContainer/MentalAttributes/PerceptionContainer"]

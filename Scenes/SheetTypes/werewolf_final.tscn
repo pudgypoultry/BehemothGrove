@@ -1,0 +1,478 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcd3knr5lb1tn"]
+
+[ext_resource type="PackedScene" uid="uid://disldu4eonx67" path="res://Scenes/SheetTypes/character_sheet_actual.tscn" id="1_cxdh1"]
+[ext_resource type="PackedScene" uid="uid://c2sk27bhtv2gk" path="res://Scenes/Tools/ArbitraryLevel.tscn" id="2_kwbcv"]
+[ext_resource type="PackedScene" uid="uid://qanpa8fq6t1j" path="res://reversed_arbitrary.tscn" id="3_xpw8q"]
+[ext_resource type="PackedScene" uid="uid://d4fwbo6ottgjn" path="res://Scenes/Tools/TenBar.tscn" id="4_upfku"]
+[ext_resource type="PackedScene" uid="uid://cppxs2pexhy5l" path="res://five_bar.tscn" id="4_vhfmi"]
+[ext_resource type="PackedScene" uid="uid://uu3btg1bodg3" path="res://Scenes/Tools/check_box.tscn" id="5_4fvuk"]
+[ext_resource type="PackedScene" uid="uid://cxekntfo7n6mi" path="res://Scenes/Tools/health_box.tscn" id="6_bjswb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4nls"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_alqxn"]
+font_size = 20
+
+[node name="Werewolf" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CharacterSheet" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_cxdh1")]
+layout_mode = 2
+
+[node name="Animalia" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Animalia"
+label_settings = SubResource("LabelSettings_q4nls")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="AnimaliaContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="GenusSpecies" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Genus" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/GenusSpecies"]
+layout_mode = 2
+text = "Genus"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="GenusBox" type="LineEdit" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/GenusSpecies"]
+layout_mode = 2
+
+[node name="Species" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/GenusSpecies"]
+layout_mode = 2
+text = "Species"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="SpeciesBox" type="LineEdit" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/GenusSpecies"]
+layout_mode = 2
+
+[node name="ShifterStatsContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = -7
+alignment = 1
+
+[node name="Spirit" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer"]
+layout_mode = 2
+text = "Spirit    "
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="DiagonalContainers" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Separation" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/DiagonalContainers"]
+custom_minimum_size = Vector2(7.51, 0)
+layout_mode = 2
+
+[node name="DiagonalButtons" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/DiagonalContainers" instance=ExtResource("2_kwbcv")]
+layout_mode = 2
+
+[node name="ReversedArbitrary" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/DiagonalContainers" instance=ExtResource("3_xpw8q")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Body" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/HBoxContainer"]
+layout_mode = 2
+text = "Body
+"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="FiveBar" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/HBoxContainer" instance=ExtResource("4_vhfmi")]
+layout_mode = 2
+theme_override_constants/separation = -2
+
+[node name="Mind" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/ShifterStatsContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 0
+text = "Mind
+"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="Anima" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Anima" type="Label" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima"]
+layout_mode = 2
+text = "Anima"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="CurrentAnima1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CurrentAnima2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AnimaliaContainer/Anima/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="Advantages" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Advantages"
+label_settings = SubResource("LabelSettings_q4nls")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="AdvantagesContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="UniqueNotesContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SpellsAbilities" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/UniqueNotesContainer"]
+layout_mode = 2
+text = "Spells/Unique Abilities"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/UniqueNotesContainer"]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+
+[node name="GnosisWillpowerParadox" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Agnosis" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+text = "Agnosis"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="GnosisLevels" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox" instance=ExtResource("4_upfku")]
+layout_mode = 2
+
+[node name="Willpower" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+text = "Willpower"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="PermanentWillpower" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox" instance=ExtResource("4_upfku")]
+layout_mode = 2
+
+[node name="TempWillpower" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/TempWillpower" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="Rage" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+text = "Rage
+"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="CurrentRage1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CurrentRage2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/GnosisWillpowerParadox/CurrentRage2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="HealthAnimaExp" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Health" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp"]
+layout_mode = 2
+text = "Health
+"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="MaxHP" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp" instance=ExtResource("4_upfku")]
+layout_mode = 2
+
+[node name="CurrentHP" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp"]
+layout_mode = 2
+
+[node name="HealthBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="HealthBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentHP" instance=ExtResource("6_bjswb")]
+layout_mode = 2
+
+[node name="Anima" type="Label" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp"]
+layout_mode = 2
+text = "Anima"
+label_settings = SubResource("LabelSettings_alqxn")
+horizontal_alignment = 1
+
+[node name="CurrentAnima1" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima1" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CurrentAnima2" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp"]
+layout_mode = 2
+
+[node name="CheckBox" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox2" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox3" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox4" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox5" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox6" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox7" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox8" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox9" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2
+
+[node name="CheckBox10" parent="ScrollContainer/VBoxContainer/AdvantagesContainer/HealthAnimaExp/CurrentAnima2" instance=ExtResource("5_4fvuk")]
+layout_mode = 2

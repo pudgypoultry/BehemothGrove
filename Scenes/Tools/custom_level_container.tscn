@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd2gofdj1dcu3"]
+
+[ext_resource type="Script" path="res://Scripts/CustomLeveledButtons.gd" id="1_1n33v"]
+[ext_resource type="Texture2D" uid="uid://dbma1wgknnud4" path="res://Textures/OffCheck.png" id="2_w8a5e"]
+[ext_resource type="Texture2D" uid="uid://7ljdd4tf8i6v" path="res://Textures/OnCheck.png" id="3_hyfjv"]
+
+[node name="CustomLevelContainer" type="HBoxContainer" node_paths=PackedStringArray("buttons")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_1n33v")
+offImage = ExtResource("2_w8a5e")
+onImage = ExtResource("3_hyfjv")
+buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4"), NodePath("Button5")]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+alignment = 1
+expand_to_text_length = true
+
+[node name="Button1" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("2_w8a5e")
+flat = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("2_w8a5e")
+flat = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("2_w8a5e")
+flat = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("2_w8a5e")
+flat = true
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 2
+icon = ExtResource("2_w8a5e")
+flat = true
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
