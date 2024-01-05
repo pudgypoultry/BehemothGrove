@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://disldu4eonx67" path="res://Scenes/SheetTypes/character_sheet_actual.tscn" id="1_cxdh1"]
 [ext_resource type="PackedScene" uid="uid://c2sk27bhtv2gk" path="res://Scenes/Tools/ArbitraryLevel.tscn" id="2_kwbcv"]
-[ext_resource type="PackedScene" uid="uid://qanpa8fq6t1j" path="res://reversed_arbitrary.tscn" id="3_xpw8q"]
+[ext_resource type="PackedScene" uid="uid://qanpa8fq6t1j" path="res://Scenes/Tools/reversed_arbitrary.tscn" id="3_xpw8q"]
 [ext_resource type="PackedScene" uid="uid://d4fwbo6ottgjn" path="res://Scenes/Tools/TenBar.tscn" id="4_upfku"]
-[ext_resource type="PackedScene" uid="uid://cppxs2pexhy5l" path="res://five_bar.tscn" id="4_vhfmi"]
+[ext_resource type="PackedScene" uid="uid://cppxs2pexhy5l" path="res://Scenes/Tools/five_bar.tscn" id="4_vhfmi"]
 [ext_resource type="PackedScene" uid="uid://uu3btg1bodg3" path="res://Scenes/Tools/check_box.tscn" id="5_4fvuk"]
 [ext_resource type="PackedScene" uid="uid://cxekntfo7n6mi" path="res://Scenes/Tools/health_box.tscn" id="6_bjswb"]
 
